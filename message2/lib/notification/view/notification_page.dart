@@ -103,29 +103,6 @@ class NotificationView extends StatelessWidget {
                     const SizedBox(
                       height: AppFontSize.lg,
                     ),
-                    Divider(
-                      thickness: 1.2,
-                      color: Colors.grey.shade400,
-                    ),
-                    buildNotificationCard(
-                      'Close Issue',
-                    ),
-                    const SizedBox(
-                      height: AppFontSize.lg,
-                    ),
-                    const SizedBox(
-                      height: AppFontSize.lg,
-                    ),
-                    Divider(
-                      thickness: 1.2,
-                      color: Colors.grey.shade400,
-                    ),
-                    buildNotificationCard(
-                      'Fix Bug',
-                    ),
-                    const SizedBox(
-                      height: AppFontSize.lg,
-                    ),
                   ],
                 ),
               ),
