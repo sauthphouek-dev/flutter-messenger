@@ -6,6 +6,7 @@ import 'package:message2/app_data/app_font_weight.dart';
 import 'package:message2/forgot_password/verify_email/verify_email.dart';
 import 'package:message2/shared/continue_with_facebook.dart';
 import 'package:message2/shared/continue_with_google.dart';
+import 'package:message2/shared/custom_app_bar.dart';
 import 'package:message2/shared/elevated_button_widget.dart';
 import 'package:message2/shared/or_continue_with.dart';
 import 'package:message2/shared/sign_in_success_dialog.dart';
@@ -39,33 +40,8 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       extendBody: true,
-      appBar: AppBar(
-        leading: Container(
-          width: 72,
-          height: 72,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.only(left: 16),
-          decoration: BoxDecoration(
-            color: AppColors.greyColor.withOpacity(.2),
-            shape: BoxShape.circle,
-          ),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: AppColors.blackColor.withOpacity(.6),
-            ),
-          ),
-        ),
-        title: Text(
-          'Sign In',
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-        ),
+      appBar: const CustomAppBar(
+        title: 'Sign In',
       ),
       body: SafeArea(
         child: SingleChildScrollView(

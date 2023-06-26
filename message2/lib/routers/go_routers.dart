@@ -1,5 +1,6 @@
 // GoRouter configuration
 // GoRouter is a declarative router for Flutter.
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:message2/app/view/main_view.dart';
 import 'package:message2/chat/chat.dart';
@@ -9,7 +10,10 @@ import 'package:message2/forgot_password/verify_otp/view/verify_otp_page.dart';
 import 'package:message2/home/view/home_page.dart';
 import 'package:message2/login/login.dart';
 import 'package:message2/login/widget/sign_in_with_email.dart';
+import 'package:message2/notification/view/notification_page.dart';
 import 'package:message2/profile/view/profile_page.dart';
+import 'package:message2/profile/widget/change_password.dart';
+import 'package:message2/profile/widget/legal_&_policy.dart';
 import 'package:message2/sign_up/sign_up.dart';
 import 'package:message2/sign_up/sign_up_with_email/sign_up_with_email.dart';
 import 'package:message2/video/view/video_page.dart';
@@ -19,12 +23,12 @@ class MyRouter {
   static final GoRouter instance = GoRouter(
     routes: [
       GoRoute(
-        path: '/login',
+        path: '/',
         builder: (context, state) => const MainView(),
       ),
       // login
       GoRoute(
-        path: '/',
+        path: '/login',
         builder: (context, state) => const LoginPage(),
       ),
 
@@ -73,7 +77,19 @@ class MyRouter {
       GoRoute(
         path: CreateNewPassword.routePath,
         builder: (context, state) => const CreateNewPassword(),
-      )
+      ),
+      GoRoute(
+        path: LegalAndPolicy.routePath,
+        builder: (context, state) => const LegalAndPolicy(),
+      ),
+      GoRoute(
+        path: ChangePassword.routePath,
+        builder: (context, state) => const ChangePassword(),
+      ),
+      GoRoute(
+        path: NotificationPage.routePath,
+        builder: (context, state) => const NotificationPage(),
+      ),
     ],
   );
 }

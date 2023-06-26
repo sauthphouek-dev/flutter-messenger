@@ -6,7 +6,6 @@ import 'package:message2/app_data/app_font_weight.dart';
 import 'package:message2/login/widget/sign_in_with_email.dart';
 import 'package:message2/shared/elevated_button_widget.dart';
 import 'package:message2/shared/text_field_widget.dart';
-import 'package:message2/sign_up/view/sign_up_page.dart';
 
 class SignUpWithEmailPage extends StatefulWidget {
   const SignUpWithEmailPage({super.key});

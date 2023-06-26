@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:message2/app_data/app_colors.dart';
 import 'package:message2/app_data/app_font_size.dart';
 import 'package:message2/app_data/app_font_weight.dart';
-import 'package:message2/app_data/box_shadow.dart';
 
 import 'package:message2/login/login.dart';
 import 'package:message2/login/widget/sign_in_with_email.dart';
@@ -14,7 +13,6 @@ import 'package:message2/shared/elevated_button_widget.dart';
 import 'package:message2/shared/or_continue_with.dart';
 import 'package:message2/shared/text_field_widget.dart';
 import 'package:message2/sign_up/sign_up.dart';
-import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
