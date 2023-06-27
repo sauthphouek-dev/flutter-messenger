@@ -38,7 +38,6 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
       extendBody: true,
       appBar: const CustomAppBar(
         title: 'Sign In',
@@ -50,9 +49,6 @@ class _SignInWithEmailState extends State<SignInWithEmail> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 20,
-              ),
               Form(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

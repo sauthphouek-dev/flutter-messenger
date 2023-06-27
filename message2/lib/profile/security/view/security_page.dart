@@ -1,46 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:message2/app_data/app_colors.dart';
 import 'package:message2/app_data/app_font_size.dart';
-import 'package:message2/app_data/app_font_weight.dart';
-import 'package:message2/app_data/box_shadow.dart';
 
-import 'package:message2/notification/notification.dart';
+import 'package:message2/profile/security/security.dart';
 import 'package:message2/shared/card_list_tile_switcher.dart';
 import 'package:message2/shared/custom_app_bar.dart';
 
-class NotificationPage extends StatelessWidget {
-  const NotificationPage({super.key});
+class SecurityPage extends StatelessWidget {
+  const SecurityPage({super.key});
 
-  static const String routePath = '/notification';
+  static const String routePath = '/security';
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => NotificationCubit(),
-      child: const NotificationView(),
+      create: (_) => SecurityCubit(),
+      child: const SecurityView(),
     );
   }
 }
 
-class NotificationView extends StatefulWidget {
-  const NotificationView({super.key});
+class SecurityView extends StatefulWidget {
+  const SecurityView({super.key});
 
   @override
-  State<NotificationView> createState() => _NotificationViewState();
+  State<SecurityView> createState() => _SecurityViewState();
 }
 
-class _NotificationViewState extends State<NotificationView> {
-  bool assignTask = false;
-  bool moveTask = false;
-  bool message = false;
-  bool createProject = false;
+class _SecurityViewState extends State<SecurityView> {
+  bool faceId = false;
+  bool rememberPw = false;
+  bool touchId = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      appBar: const CustomAppBar(title: 'Notifications'),
+      // backgroundColor: Colors.grey.shade200,
+      appBar: const CustomAppBar(title: 'Security'),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
@@ -57,23 +52,12 @@ class _NotificationViewState extends State<NotificationView> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Message Notifications',
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                    fontSize: AppFontSize.lg,
-                    fontWeight: AppFontWeight.semiBold,
-                  ),
-                ),
-                const SizedBox(
-                  height: AppFontSize.md,
-                ),
                 CardListTileSwitcher(
-                  title: 'Assign Task And Project',
-                  sectionType: assignTask,
+                  title: 'Face ID',
+                  sectionType: faceId,
                   onChange: (value) {
                     setState(() {
-                      assignTask = value;
+                      faceId = value;
                     });
                   },
                 ),
@@ -88,11 +72,11 @@ class _NotificationViewState extends State<NotificationView> {
                   height: AppFontSize.md,
                 ),
                 CardListTileSwitcher(
-                  title: 'Move Task',
-                  sectionType: moveTask,
+                  title: 'Remember Password',
+                  sectionType: rememberPw,
                   onChange: (value) {
                     setState(() {
-                      moveTask = value;
+                      rememberPw = value;
                     });
                   },
                 ),
@@ -107,30 +91,11 @@ class _NotificationViewState extends State<NotificationView> {
                   height: AppFontSize.md,
                 ),
                 CardListTileSwitcher(
-                  title: 'Message',
-                  sectionType: message,
+                  title: 'Touch ID',
+                  sectionType: touchId,
                   onChange: (value) {
                     setState(() {
-                      message = value;
-                    });
-                  },
-                ),
-                const SizedBox(
-                  height: AppFontSize.md,
-                ),
-                Divider(
-                  thickness: 1.2,
-                  color: Colors.grey.shade300,
-                ),
-                const SizedBox(
-                  height: AppFontSize.md,
-                ),
-                CardListTileSwitcher(
-                  title: 'Create Project',
-                  sectionType: createProject,
-                  onChange: (value) {
-                    setState(() {
-                      createProject = value;
+                      touchId = value;
                     });
                   },
                 ),

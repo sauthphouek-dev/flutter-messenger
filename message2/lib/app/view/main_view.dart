@@ -43,7 +43,7 @@ class _BodyMainViewState extends State<_BodyMainView>
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 4, vsync: this);
+    tabController = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -52,9 +52,14 @@ class _BodyMainViewState extends State<_BodyMainView>
       body: TabBarView(
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
-        children: const [
+        children: [
           HomePage(),
           VideoPage(),
+          Scaffold(
+            body: Center(
+              child: Text('Add post'),
+            ),
+          ),
           ChatPage(),
           ProfilePage(),
         ],

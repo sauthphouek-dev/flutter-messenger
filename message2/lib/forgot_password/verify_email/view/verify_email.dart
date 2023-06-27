@@ -5,6 +5,8 @@ import 'package:message2/app_data/app_colors.dart';
 import 'package:message2/app_data/app_font_size.dart';
 import 'package:message2/forgot_password/verify_email/cubit/verify_email_cubit.dart';
 import 'package:message2/forgot_password/verify_otp/view/verify_otp_page.dart';
+import 'package:message2/shared/custom_app_bar.dart';
+import 'package:message2/shared/elevated_button_widget.dart';
 import 'package:message2/shared/text_field_widget.dart';
 
 class VerifyEmailPage extends StatelessWidget {
@@ -47,27 +49,8 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
     return BlocBuilder<VerifyEmailCubit, VerifyEmailState>(
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: Colors.grey.shade200,
-          appBar: AppBar(
-            leading: Container(
-              width: 72,
-              height: 72,
-              alignment: Alignment.center,
-              margin: const EdgeInsets.only(left: 16),
-              decoration: BoxDecoration(
-                color: AppColors.greyColor.withOpacity(.2),
-                shape: BoxShape.circle,
-              ),
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.of(context).pop();
-                },
-                child: Icon(
-                  Icons.arrow_back,
-                  color: AppColors.blackColor.withOpacity(.6),
-                ),
-              ),
-            ),
+          appBar: const CustomAppBar(
+            title: '',
           ),
           body: GestureDetector(
             onTap: closeKeyboard,
@@ -76,7 +59,7 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
               child: Center(
                 child: Column(
                   children: [
-                    const SizedBox(height: 32),
+                    const SizedBox(height: AppFontSize.lg),
                     Text(
                       'Forgot Password',
                       style: TextStyle(
@@ -85,7 +68,7 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
                         color: AppColors.blackColor.withOpacity(.8),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: AppFontSize.md),
                     Text(
                       'Recover your password account',
                       style: TextStyle(
@@ -94,7 +77,7 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
                         color: AppColors.blackColor.withOpacity(.6),
                       ),
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: AppFontSize.xxxlg),
                     Form(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -113,23 +96,12 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
                             hintText: 'Enter your email',
                           ),
                           const SizedBox(height: AppFontSize.xxxlg),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton(
+                          ElevatedButtonWidget(
+                              title: 'Continue',
                               onPressed: () {
                                 GoRouter.of(context)
                                     .push(VerifyOtpPage.routePath);
-                              },
-                              child: Text(
-                                'Continue',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColors.whiteColor,
-                                ),
-                              ),
-                            ),
-                          ),
+                              })
                         ],
                       ),
                     ),

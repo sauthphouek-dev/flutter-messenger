@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:message2/app_data/app_colors.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class NavigationPage extends StatelessWidget {
@@ -38,6 +39,19 @@ class NavigationPage extends StatelessWidget {
               PhosphorIcons.light.video,
             ),
             text: 'Video',
+          ),
+          Container(
+            width: 72,
+            height: 72,
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              shape: BoxShape.circle,
+            ),
+            child: PhosphorIcon(
+              PhosphorIcons.light.plusCircle,
+              color: AppColors.whiteColor,
+              size: 40,
+            ),
           ),
           Tab(
             icon: PhosphorIcon(

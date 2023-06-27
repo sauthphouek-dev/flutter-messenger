@@ -39,7 +39,8 @@ class _LegalAndPolicyState extends State<LegalAndPolicy> {
               height: AppFontSize.sm,
             ),
             Text(
-                'What happened? Dear Users, We, the moderators at the r/FlutterDev subreddit, and the FlutterDev discord, have been protesting Reddit recent changes, which primarily affect Reddit API, by charging an exhorbitant price to use it.These changes were announced with 30 days of notice, effectively',),
+              'What happened? Dear Users, We, the moderators at the r/FlutterDev subreddit, and the FlutterDev discord, have been protesting Reddit recent changes, which primarily affect Reddit API, by charging an exhorbitant price to use it.These changes were announced with 30 days of notice, effectively',
+            ),
             SizedBox(
               height: AppFontSize.xxlg,
             ),
@@ -54,7 +55,8 @@ class _LegalAndPolicyState extends State<LegalAndPolicy> {
               height: AppFontSize.sm,
             ),
             Text(
-                'What happened? Dear Users, We, the moderators at the r/FlutterDev subreddit, and the FlutterDev discord, have been protesting Reddit recent changes, which primarily affect Reddit API, by charging an exhorbitant price to use it.These changes were announced with 30 days of notice, effectively',),
+              'What happened? Dear Users, We, the moderators at the r/FlutterDev subreddit, and the FlutterDev discord, have been protesting Reddit recent changes, which primarily affect Reddit API, by charging an exhorbitant price to use it.These changes were announced with 30 days of notice, effectively',
+            ),
           ],
         ),
       ),

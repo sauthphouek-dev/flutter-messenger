@@ -17,20 +17,8 @@ class ContinueWithGoogle extends StatelessWidget {
         color: Colors.grey.shade200,
       ),
       width: double.infinity,
-      child: ElevatedButton.icon(
+      child: ElevatedButton(
         onPressed: () {},
-        icon: Icon(
-          PhosphorIcons.duotone.googleLogo,
-          color: AppColors.blackColor,
-        ),
-        label: Text(
-          'Continue with Google',
-          style: TextStyle(
-            fontSize: AppFontSize.lg,
-            fontWeight: AppFontWeight.semiBold,
-            color: AppColors.blackColor,
-          ),
-        ),
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.grey.shade100,
           shape: RoundedRectangleBorder(
@@ -39,6 +27,27 @@ class ContinueWithGoogle extends StatelessWidget {
               color: AppColors.primaryColor,
             ),
           ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/gg_img.jpg',
+              width: 24,
+              height: 24,
+            ),
+            const SizedBox(
+              width: AppFontSize.md,
+            ),
+            Text(
+              'Continue with Google',
+              style: TextStyle(
+                fontSize: AppFontSize.lg,
+                fontWeight: AppFontWeight.semiBold,
+                color: AppColors.blackColor,
+              ),
+            )
+          ],
         ),
       ),
     );

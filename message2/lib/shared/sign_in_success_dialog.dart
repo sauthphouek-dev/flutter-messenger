@@ -35,8 +35,7 @@ void signInSuccessDialog(BuildContext context) {
           ElevatedButtonWidget(
             title: 'Continue',
             onPressed: () {
-              context.pop();
-              GoRouter.of(context).pushReplacement('/login');
+              context.go('/');
             },
           )
         ],

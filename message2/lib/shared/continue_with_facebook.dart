@@ -17,21 +17,8 @@ class ContinueWithFacebook extends StatelessWidget {
         color: Colors.grey.shade200,
       ),
       width: double.infinity,
-      child: ElevatedButton.icon(
+      child: ElevatedButton(
         onPressed: () {},
-        icon: Icon(
-          PhosphorIcons.fill.facebookLogo,
-          color: AppColors.primaryColor,
-          size: AppFontSize.xxlg,
-        ),
-        label: Text(
-          'Continue with Facebook',
-          style: TextStyle(
-            fontSize: AppFontSize.lg,
-            fontWeight: AppFontWeight.semiBold,
-            color: AppColors.blackColor,
-          ),
-        ),
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.grey.shade100,
           shape: RoundedRectangleBorder(
@@ -40,6 +27,27 @@ class ContinueWithFacebook extends StatelessWidget {
               color: AppColors.primaryColor,
             ),
           ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/fb_img.jpg',
+              width: 24,
+              height: 24,
+            ),
+            const SizedBox(
+              width: AppFontSize.md,
+            ),
+            Text(
+              'Continue with Facebook',
+              style: TextStyle(
+                fontSize: AppFontSize.lg,
+                fontWeight: AppFontWeight.semiBold,
+                color: AppColors.blackColor,
+              ),
+            )
+          ],
         ),
       ),
     );

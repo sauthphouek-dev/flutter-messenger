@@ -20,7 +20,6 @@ class ElevatedButtonWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.primaryColor,
         borderRadius: BorderRadius.circular(AppFontSize.sm),
-        boxShadow: CardBoxShadow.primaryShadow,
       ),
       width: double.infinity,
       child: ElevatedButton(
@@ -33,9 +32,10 @@ class ElevatedButtonWidget extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: AppFontSize.lg,
             fontWeight: AppFontWeight.bold,
+            color: AppColors.whiteColor,
           ),
         ),
       ),

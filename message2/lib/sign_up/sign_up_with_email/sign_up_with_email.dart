@@ -4,6 +4,7 @@ import 'package:message2/app_data/app_colors.dart';
 import 'package:message2/app_data/app_font_size.dart';
 import 'package:message2/app_data/app_font_weight.dart';
 import 'package:message2/login/widget/sign_in_with_email.dart';
+import 'package:message2/shared/custom_app_bar.dart';
 import 'package:message2/shared/elevated_button_widget.dart';
 import 'package:message2/shared/text_field_widget.dart';
 
@@ -38,35 +39,9 @@ class _SignUpWithEmailPageState extends State<SignUpWithEmailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
       extendBody: true,
-      appBar: AppBar(
-        leading: Container(
-          width: 72,
-          height: 72,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.only(left: 16),
-          decoration: BoxDecoration(
-            color: AppColors.greyColor.withOpacity(.2),
-            shape: BoxShape.circle,
-          ),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: AppColors.blackColor.withOpacity(.6),
-            ),
-          ),
-        ),
-        title: Text(
-          'Sign Up',
-          style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-        ),
+      appBar: const CustomAppBar(
+        title: 'Sign Up',
       ),
       body: SafeArea(
         child: SingleChildScrollView(

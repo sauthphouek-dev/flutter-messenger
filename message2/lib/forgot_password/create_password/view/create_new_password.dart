@@ -3,6 +3,8 @@ import 'package:message2/app_data/app_colors.dart';
 import 'package:message2/app_data/app_font_size.dart';
 import 'package:message2/app_data/app_font_weight.dart';
 import 'package:message2/app_data/box_shadow.dart';
+import 'package:message2/shared/custom_app_bar.dart';
+import 'package:message2/shared/elevated_button_widget.dart';
 import 'package:message2/shared/text_field_widget.dart';
 
 class CreateNewPassword extends StatefulWidget {
@@ -38,28 +40,7 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      appBar: AppBar(
-        leading: Container(
-          width: 72,
-          height: 72,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.only(left: 16),
-          decoration: BoxDecoration(
-            color: AppColors.greyColor.withOpacity(.2),
-            shape: BoxShape.circle,
-          ),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: AppColors.blackColor.withOpacity(.6),
-            ),
-          ),
-        ),
-      ),
+      appBar: const CustomAppBar(title: ''),
       body: GestureDetector(
         onTap: closeKeyboard,
         child: SingleChildScrollView(
@@ -136,30 +117,9 @@ class _CreateNewPasswordState extends State<CreateNewPassword> {
                         },
                       ),
                       const SizedBox(height: AppFontSize.xxxlg),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppFontSize.md),
-                          boxShadow: CardBoxShadow.primaryShadow,
-                        ),
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.primaryColor,
-                            shape: RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.circular(AppFontSize.xlg),
-                            ),
-                          ),
-                          child: Text(
-                            'Continue',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.whiteColor,
-                            ),
-                          ),
-                        ),
+                      ElevatedButtonWidget(
+                        title: 'Continue',
+                        onPressed: () {},
                       ),
                     ],
                   ),

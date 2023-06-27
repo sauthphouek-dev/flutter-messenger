@@ -5,6 +5,8 @@ import 'package:message2/app_data/app_font_size.dart';
 import 'package:message2/app_data/app_font_weight.dart';
 import 'package:message2/app_data/box_shadow.dart';
 import 'package:message2/forgot_password/create_password/view/create_new_password.dart';
+import 'package:message2/shared/custom_app_bar.dart';
+import 'package:message2/shared/elevated_button_widget.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerifyOtpPage extends StatefulWidget {
@@ -28,27 +30,8 @@ class _VerifyOtpPageState extends State<VerifyOtpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
-      appBar: AppBar(
-        leading: Container(
-          width: 72,
-          height: 72,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.only(left: 16),
-          decoration: BoxDecoration(
-            color: AppColors.greyColor.withOpacity(.2),
-            shape: BoxShape.circle,
-          ),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-            child: Icon(
-              Icons.arrow_back,
-              color: AppColors.blackColor.withOpacity(.6),
-            ),
-          ),
-        ),
+      appBar: const CustomAppBar(
+        title: '',
       ),
       body: GestureDetector(
         onTap: closeKeyboard,
@@ -57,7 +40,6 @@ class _VerifyOtpPageState extends State<VerifyOtpPage> {
           child: Center(
             child: Column(
               children: [
-                const SizedBox(height: 32),
                 Text(
                   'Enter OPT',
                   style: TextStyle(
@@ -113,31 +95,11 @@ class _VerifyOtpPageState extends State<VerifyOtpPage> {
                 const SizedBox(height: AppFontSize.xxxlg),
 
                 // button to verify OTP
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(AppFontSize.md),
-                    boxShadow: CardBoxShadow.primaryShadow,
-                  ),
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      GoRouter.of(context).push(CreateNewPassword.routePath);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(AppFontSize.xlg),
-                      ),
-                    ),
-                    child: Text(
-                      'Continue',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.whiteColor,
-                      ),
-                    ),
-                  ),
+                ElevatedButtonWidget(
+                  title: 'Continue',
+                  onPressed: () {
+                    GoRouter.of(context).push(CreateNewPassword.routePath);
+                  },
                 ),
                 // Didn't receive OTP? Resend Code
                 const SizedBox(height: AppFontSize.xxlg),

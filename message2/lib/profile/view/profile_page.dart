@@ -8,6 +8,8 @@ import 'package:message2/app_data/app_font_weight.dart';
 import 'package:message2/forgot_password/verify_email/view/view.dart';
 import 'package:message2/notification/notification.dart';
 import 'package:message2/profile/profile.dart';
+import 'package:message2/profile/security/security.dart';
+import 'package:message2/profile/view_profile/view/view.dart';
 import 'package:message2/profile/widget/change_password.dart';
 import 'package:message2/profile/widget/legal_&_policy.dart';
 import 'package:message2/shared/elevated_button_widget.dart';
@@ -163,7 +165,9 @@ class ProfileView extends StatelessWidget {
                 buildCardListTile(
                   PhosphorIcons.light.userCircle,
                   'View Profile',
-                  () {},
+                  () {
+                    GoRouter.of(context).push(ViewProfilePage.routePath);
+                  },
                 ),
 
                 // security section
@@ -192,7 +196,9 @@ class ProfileView extends StatelessWidget {
                 buildCardListTile(
                   PhosphorIcons.light.alien,
                   'Security',
-                  () {},
+                  () {
+                    GoRouter.of(context).push(SecurityPage.routePath);
+                  },
                 ),
 
                 // general section
@@ -239,11 +245,11 @@ class ProfileView extends StatelessWidget {
                     );
                   },
                 ),
-                buildCardListTile(
-                  PhosphorIcons.light.question,
-                  'Help & Support',
-                  () {},
-                ),
+                // buildCardListTile(
+                //   PhosphorIcons.light.question,
+                //   'Help & Support',
+                //   () {},
+                // ),
 
                 // log out button
                 const SizedBox(height: AppFontSize.xxlg),

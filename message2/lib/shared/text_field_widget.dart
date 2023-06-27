@@ -26,9 +26,9 @@ class TextFieldWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: Colors.grey.shade100,
+        color: AppColors.primaryColor.withOpacity(.06),
         borderRadius: BorderRadius.circular(AppFontSize.sm),
-        boxShadow: CardBoxShadow.primaryShadow,
+        // boxShadow: CardBoxShadow.primaryShadow,
       ),
       child: TextFormField(
         obscureText: isShowPassword,
@@ -48,7 +48,7 @@ class TextFieldWidget extends StatelessWidget {
               : null,
           hintText: hintText,
           hintStyle: const TextStyle(
-            fontSize: AppFontSize.lg,
+            fontSize: AppFontSize.md,
             color: Colors.grey,
             fontWeight: AppFontWeight.light,
           ),
