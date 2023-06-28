@@ -34,7 +34,6 @@ class _SecurityViewState extends State<SecurityView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.grey.shade200,
       appBar: const CustomAppBar(title: 'Security'),
       body: SafeArea(
         child: SingleChildScrollView(

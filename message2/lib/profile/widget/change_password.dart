@@ -43,96 +43,100 @@ class _ChangePasswordState extends State<ChangePassword> {
           vertical: AppFontSize.md,
         ),
         child: SafeArea(
-          child: Form(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'The new password must be different from the current password',
-                  style: TextStyle(
-                    fontSize: AppFontSize.xlg,
-                    fontWeight: AppFontWeight.semiBold,
+          child: SingleChildScrollView(
+            child: Form(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'The new password must be different from the current password',
+                    style: TextStyle(
+                      fontSize: AppFontSize.xlg,
+                      fontWeight: AppFontWeight.semiBold,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: AppFontSize.xxxlg,
-                ),
-                Text(
-                  'Current password',
-                  style: TextStyle(
-                    fontSize: AppFontSize.lg,
-                    fontWeight: AppFontWeight.semiBold,
-                    color: Colors.grey.shade500,
+                  const SizedBox(
+                    height: AppFontSize.xxxlg,
                   ),
-                ),
-                const SizedBox(
-                  height: AppFontSize.xs,
-                ),
-                TextFieldWidget(
-                  controller: _currentPdController,
-                  hintText: 'Enter your password',
-                  isShowPassword: isCurrentPdVisible,
-                  obscureText: true,
-                  onTap: () {
-                    setState(() {
-                      isCurrentPdVisible = !isCurrentPdVisible;
-                    });
-                  },
-                ),
-                const SizedBox(
-                  height: AppFontSize.xlg,
-                ),
-                Text(
-                  'New password',
-                  style: TextStyle(
-                    fontSize: AppFontSize.lg,
-                    fontWeight: AppFontWeight.semiBold,
-                    color: Colors.grey.shade500,
+                  Text(
+                    'Current password',
+                    style: TextStyle(
+                      fontSize: AppFontSize.lg,
+                      fontWeight: AppFontWeight.semiBold,
+                      color: Colors.grey.shade500,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: AppFontSize.xs,
-                ),
-                TextFieldWidget(
-                  controller: _newPdController,
-                  hintText: 'Enter your password',
-                  isShowPassword: isNewPdVisible,
-                  obscureText: true,
-                  onTap: () {
-                    setState(() {
-                      isNewPdVisible = !isNewPdVisible;
-                    });
-                  },
-                ),
-                const SizedBox(
-                  height: AppFontSize.xlg,
-                ),
-                Text(
-                  'Confirm password',
-                  style: TextStyle(
-                    fontSize: AppFontSize.lg,
-                    fontWeight: AppFontWeight.semiBold,
-                    color: Colors.grey.shade500,
+                  const SizedBox(
+                    height: AppFontSize.xs,
                   ),
-                ),
-                const SizedBox(height: AppFontSize.xs),
-                TextFieldWidget(
-                  controller: _confirmPdController,
-                  hintText: 'Enter your password',
-                  isShowPassword: isConfirmPdVisible,
-                  obscureText: true,
-                  onTap: () {
-                    setState(() {
-                      isConfirmPdVisible = !isConfirmPdVisible;
-                    });
-                  },
-                ),
-                const Spacer(),
-                ElevatedButtonWidget(
-                  title: 'Submit',
-                  onPressed: () {},
-                )
-              ],
+                  TextFieldWidget(
+                    controller: _currentPdController,
+                    hintText: 'Enter your password',
+                    isShowPassword: isCurrentPdVisible,
+                    obscureText: true,
+                    onTap: () {
+                      setState(() {
+                        isCurrentPdVisible = !isCurrentPdVisible;
+                      });
+                    },
+                  ),
+                  const SizedBox(
+                    height: AppFontSize.xlg,
+                  ),
+                  Text(
+                    'New password',
+                    style: TextStyle(
+                      fontSize: AppFontSize.lg,
+                      fontWeight: AppFontWeight.semiBold,
+                      color: Colors.grey.shade500,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: AppFontSize.xs,
+                  ),
+                  TextFieldWidget(
+                    controller: _newPdController,
+                    hintText: 'Enter your password',
+                    isShowPassword: isNewPdVisible,
+                    obscureText: true,
+                    onTap: () {
+                      setState(() {
+                        isNewPdVisible = !isNewPdVisible;
+                      });
+                    },
+                  ),
+                  const SizedBox(
+                    height: AppFontSize.xlg,
+                  ),
+                  Text(
+                    'Confirm password',
+                    style: TextStyle(
+                      fontSize: AppFontSize.lg,
+                      fontWeight: AppFontWeight.semiBold,
+                      color: Colors.grey.shade500,
+                    ),
+                  ),
+                  const SizedBox(height: AppFontSize.xs),
+                  TextFieldWidget(
+                    controller: _confirmPdController,
+                    hintText: 'Enter your password',
+                    isShowPassword: isConfirmPdVisible,
+                    obscureText: true,
+                    onTap: () {
+                      setState(() {
+                        isConfirmPdVisible = !isConfirmPdVisible;
+                      });
+                    },
+                  ),
+                  const SizedBox(
+                    height: AppFontSize.xxlg,
+                  ),
+                  ElevatedButtonWidget(
+                    title: 'Submit',
+                    onPressed: () {},
+                  )
+                ],
+              ),
             ),
           ),
         ),

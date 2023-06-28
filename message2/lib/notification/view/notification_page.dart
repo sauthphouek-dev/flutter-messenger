@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:message2/app_data/app_colors.dart';
 import 'package:message2/app_data/app_font_size.dart';
 import 'package:message2/app_data/app_font_weight.dart';
-import 'package:message2/app_data/box_shadow.dart';
-
 import 'package:message2/notification/notification.dart';
 import 'package:message2/shared/card_list_tile_switcher.dart';
 import 'package:message2/shared/custom_app_bar.dart';
@@ -39,7 +35,6 @@ class _NotificationViewState extends State<NotificationView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
       appBar: const CustomAppBar(title: 'Notifications'),
       body: SafeArea(
         child: SingleChildScrollView(

@@ -135,190 +135,189 @@ class _ViewProfileViewState extends State<ViewProfileView> {
               SliverFillRemaining(
                 fillOverscroll: true,
                 hasScrollBody: false,
-                child: SafeArea(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppFontSize.md,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            GoRouter.of(context)
-                                .push(ProfileImagePreview.routePath);
-                          },
-                          child: Container(
-                            height: 120,
-                            width: 120,
-                            padding: const EdgeInsets.all(AppFontSize.xs),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryColor.withOpacity(.2),
-                              borderRadius: BorderRadius.circular(6),
-                              image: const DecorationImage(
-                                image: AssetImage('assets/images/sticker.webp'),
-                                fit: BoxFit.cover,
-                              ),
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppFontSize.md,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: AppFontSize.lg),
+                      GestureDetector(
+                        onTap: () {
+                          GoRouter.of(context)
+                              .push(ProfileImagePreview.routePath);
+                        },
+                        child: Container(
+                          height: 120,
+                          width: 120,
+                          padding: const EdgeInsets.all(AppFontSize.xs),
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryColor.withOpacity(.2),
+                            borderRadius: BorderRadius.circular(6),
+                            image: const DecorationImage(
+                              image: AssetImage('assets/images/sticker.webp'),
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
-                        const SizedBox(height: AppFontSize.md),
-                        const Text(
-                          'Shaut Meaz',
-                          style: TextStyle(
-                            fontWeight: AppFontWeight.bold,
-                            fontSize: AppFontSize.xxlg,
-                          ),
+                      ),
+                      const SizedBox(height: AppFontSize.md),
+                      const Text(
+                        'Shaut Meaz',
+                        style: TextStyle(
+                          fontWeight: AppFontWeight.bold,
+                          fontSize: AppFontSize.xxlg,
                         ),
-                        const SizedBox(height: AppFontSize.md),
-                        Row(
+                      ),
+                      const SizedBox(height: AppFontSize.md),
+                      Row(
+                        children: [
+                          Text(
+                            'Junior Flutter Developer',
+                            style: TextStyle(
+                              color: AppColors.greyColor,
+                            ),
+                          ),
+                          Text(
+                            ' at Camsolution Technology',
+                            style: TextStyle(
+                              color: AppColors.blackColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: AppFontSize.md),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                            flex: 6,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(),
+                              child: const Text('Send Message'),
+                            ),
+                          ),
+                          const SizedBox(width: AppFontSize.md),
+                          Expanded(
+                            flex: 3,
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    AppColors.greyColor.withOpacity(.2),
+                              ),
+                              child: const Text(
+                                'Invited',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: AppFontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: AppFontSize.md),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: AppFontSize.lg,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(
-                              'Junior Flutter Developer',
-                              style: TextStyle(
-                                color: AppColors.greyColor,
-                              ),
+                            buildExpanded(
+                              'Project',
+                              '2+',
                             ),
-                            Text(
-                              ' at Camsolution Technology',
-                              style: TextStyle(
-                                color: AppColors.blackColor,
-                              ),
+                            Container(
+                              width: 1,
+                              height: 32,
+                              color: Colors.grey.shade300,
+                            ),
+                            buildExpanded(
+                              'Experience',
+                              '7 Months',
+                            ),
+                            Container(
+                              width: 1,
+                              height: 32,
+                              color: Colors.grey.shade300,
+                            ),
+                            buildExpanded(
+                              'Rate',
+                              '4.0/5',
                             ),
                           ],
                         ),
-                        const SizedBox(height: AppFontSize.md),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Expanded(
-                              flex: 6,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(),
-                                child: const Text('Send Message'),
-                              ),
-                            ),
-                            const SizedBox(width: AppFontSize.md),
-                            Expanded(
-                              flex: 3,
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      AppColors.greyColor.withOpacity(.2),
-                                ),
-                                child: const Text(
-                                  'Invited',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: AppFontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                      ),
+                      const SizedBox(height: AppFontSize.xlg),
+                      const Text(
+                        'About Us',
+                        style: TextStyle(
+                          fontWeight: AppFontWeight.semiBold,
+                          fontSize: AppFontSize.lg,
                         ),
-                        const SizedBox(height: AppFontSize.md),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: AppFontSize.lg,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              buildExpanded(
-                                'Project',
-                                '2+',
-                              ),
-                              Container(
-                                width: 1,
-                                height: 32,
-                                color: Colors.grey.shade300,
-                              ),
-                              buildExpanded(
-                                'Experience',
-                                '7 Months',
-                              ),
-                              Container(
-                                width: 1,
-                                height: 32,
-                                color: Colors.grey.shade300,
-                              ),
-                              buildExpanded(
-                                'Rate',
-                                '4.0/5',
-                              ),
-                            ],
-                          ),
+                      ),
+                      const SizedBox(height: AppFontSize.md),
+                      Text(
+                        'CamSolution is a professional software development company joined by the most talented team who are really passionate about what they have been doing and offer professional IT solutions expertise to help our customer grow. We have a clear understanding of the development requirements, and we have the knowledge, skills and experience to complete the project successfully. Through the understanding of business need, we provide a great technology solution that enables businesses to achieve their aspirations.',
+                        style: TextStyle(
+                          color: Colors.grey.shade500,
+                          fontWeight: AppFontWeight.light,
+                          height: 1.8,
                         ),
-                        const SizedBox(height: AppFontSize.xlg),
-                        const Text(
-                          'About Us',
-                          style: TextStyle(
-                            fontWeight: AppFontWeight.semiBold,
-                            fontSize: AppFontSize.lg,
-                          ),
+                      ),
+                      const SizedBox(
+                        height: AppFontSize.lg,
+                      ),
+                      const Text(
+                        'Location',
+                        style: TextStyle(
+                          fontWeight: AppFontWeight.semiBold,
+                          fontSize: AppFontSize.lg,
                         ),
-                        const SizedBox(height: AppFontSize.md),
-                        Text(
-                          'CamSolution is a professional software development company joined by the most talented team who are really passionate about what they have been doing and offer professional IT solutions expertise to help our customer grow. We have a clear understanding of the development requirements, and we have the knowledge, skills and experience to complete the project successfully. Through the understanding of business need, we provide a great technology solution that enables businesses to achieve their aspirations.',
-                          style: TextStyle(
-                            color: Colors.grey.shade500,
-                            fontWeight: AppFontWeight.light,
-                            height: 1.8,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: AppFontSize.lg,
-                        ),
-                        const Text(
-                          'Location',
-                          style: TextStyle(
-                            fontWeight: AppFontWeight.semiBold,
-                            fontSize: AppFontSize.lg,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: AppFontSize.lg,
-                        ),
-                        Image.asset(
-                          'assets/images/background.jpeg',
-                          // height: 600,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        Image.asset(
-                          'assets/images/background.jpeg',
-                          // height: 600,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        Image.asset(
-                          'assets/images/background.jpeg',
-                          // height: 600,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        Image.asset(
-                          'assets/images/background.jpeg',
-                          // height: 600,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        Image.asset(
-                          'assets/images/background.jpeg',
-                          // height: 600,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        Image.asset(
-                          'assets/images/background.jpeg',
-                          // height: 600,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        Image.asset(
-                          'assets/images/background.jpeg',
-                          // height: 600,
-                          fit: BoxFit.fitHeight,
-                        ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(
+                        height: AppFontSize.lg,
+                      ),
+                      Image.asset(
+                        'assets/images/background.jpeg',
+                        // height: 600,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      Image.asset(
+                        'assets/images/background.jpeg',
+                        // height: 600,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      Image.asset(
+                        'assets/images/background.jpeg',
+                        // height: 600,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      Image.asset(
+                        'assets/images/background.jpeg',
+                        // height: 600,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      Image.asset(
+                        'assets/images/background.jpeg',
+                        // height: 600,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      Image.asset(
+                        'assets/images/background.jpeg',
+                        // height: 600,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      Image.asset(
+                        'assets/images/background.jpeg',
+                        // height: 600,
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ],
                   ),
                 ),
               ),

@@ -30,40 +30,35 @@ class NavigationPage extends StatelessWidget {
         tabs: [
           Tab(
             icon: PhosphorIcon(
-              PhosphorIcons.light.house,
+              PhosphorIcons.fill.house,
             ),
-            text: 'Home',
+            // text: 'Home',
           ),
           Tab(
             icon: PhosphorIcon(
-              PhosphorIcons.light.video,
+              PhosphorIcons.fill.video,
             ),
-            text: 'Video',
+            // text: 'Video',
           ),
-          Container(
-            width: 72,
-            height: 72,
-            decoration: BoxDecoration(
+          Tab(
+            // width: 72,/
+            icon: PhosphorIcon(
+              PhosphorIcons.fill.plusCircle,
               color: AppColors.primaryColor,
-              shape: BoxShape.circle,
-            ),
-            child: PhosphorIcon(
-              PhosphorIcons.light.plusCircle,
-              color: AppColors.whiteColor,
-              size: 40,
+              size: 48,
             ),
           ),
           Tab(
             icon: PhosphorIcon(
-              PhosphorIcons.light.chatCircle,
+              PhosphorIcons.fill.chatCircle,
             ),
-            text: 'Chat',
+            // text: 'Chat',
           ),
           Tab(
             icon: PhosphorIcon(
-              PhosphorIcons.light.userCircle,
+              PhosphorIcons.fill.userCircle,
             ),
-            text: 'Profile',
+            // text: 'Profile',
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:message2/app_data/app_colors.dart';
 import 'package:message2/app_data/app_font_size.dart';
@@ -8,6 +9,7 @@ import 'package:message2/app_data/app_font_weight.dart';
 import 'package:message2/forgot_password/verify_email/view/view.dart';
 import 'package:message2/notification/notification.dart';
 import 'package:message2/profile/profile.dart';
+import 'package:message2/profile/profile_editing/view/view.dart';
 import 'package:message2/profile/security/security.dart';
 import 'package:message2/profile/view_profile/view/view.dart';
 import 'package:message2/profile/widget/change_password.dart';
@@ -78,68 +80,11 @@ class ProfileView extends StatelessWidget {
                 ),
                 const Spacer(),
                 IconButton(
-                  icon: PhosphorIcon(PhosphorIcons.duotone.notePencil),
+                  icon: SvgPicture.asset(
+                    'assets/svg/edit.svg',
+                  ),
                   onPressed: () {
-                    showAnimatedDialog(
-                      context: context,
-                      animationType: DialogTransitionType.fadeScale,
-                      barrierDismissible: true,
-                      builder: (context) {
-                        return AlertDialog(
-                          insetPadding: const EdgeInsets.all(AppFontSize.xxxlg),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: AppFontSize.md,
-                            vertical: AppFontSize.sm,
-                          ),
-                          clipBehavior: Clip.antiAliasWithSaveLayer,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(AppFontSize.lg),
-                          ),
-                          backgroundColor: Colors.grey.shade200,
-                          title: Text(
-                            textAlign: TextAlign.center,
-                            'Change your picture',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                  color: Colors.black,
-                                  fontWeight: AppFontWeight.semiBold,
-                                  fontSize: AppFontSize.xlg,
-                                ),
-                          ),
-                          content: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              const Divider(),
-                              const SizedBox(
-                                height: AppFontSize.lg,
-                              ),
-                              buildContainer(
-                                'Take a photo',
-                                PhosphorIcons.fill.camera,
-                                () {},
-                                true,
-                              ),
-                              const SizedBox(height: AppFontSize.md),
-                              buildContainer(
-                                'Choose from your life',
-                                PhosphorIcons.fill.fileImage,
-                                () {},
-                                true,
-                              ),
-                              const SizedBox(height: AppFontSize.md),
-                              buildContainer(
-                                'Delete Photo',
-                                PhosphorIcons.fill.trash,
-                                () {},
-                                false,
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    );
+                    GoRouter.of(context).push(ProfileEditingPage.routePath);
                   },
                 )
               ],
@@ -163,7 +108,7 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
                 buildCardListTile(
-                  PhosphorIcons.light.userCircle,
+                  'assets/svg/Profile.svg',
                   'View Profile',
                   () {
                     GoRouter.of(context).push(ViewProfilePage.routePath);
@@ -180,21 +125,21 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
                 buildCardListTile(
-                  PhosphorIcons.light.lock,
+                  'assets/svg/change_password.svg',
                   'Change Password',
                   () {
                     GoRouter.of(context).push(ChangePassword.routePath);
                   },
                 ),
                 buildCardListTile(
-                  PhosphorIcons.light.lock,
+                  'assets/svg/change_password.svg',
                   'Forgot Password',
                   () {
                     GoRouter.of(context).push(VerifyEmailPage.routePath);
                   },
                 ),
                 buildCardListTile(
-                  PhosphorIcons.light.alien,
+                  'assets/svg/security.svg',
                   'Security',
                   () {
                     GoRouter.of(context).push(SecurityPage.routePath);
@@ -213,14 +158,14 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
                 buildCardListTile(
-                  PhosphorIcons.light.bell,
+                  'assets/svg/bx-bell.svg',
                   'Notifications',
                   () {
                     GoRouter.of(context).push(NotificationPage.routePath);
                   },
                 ),
                 buildCardListTile(
-                  PhosphorIcons.light.trash,
+                  'assets/svg/trash.svg',
                   'Clear Cache',
                   () {},
                 ),
@@ -237,7 +182,7 @@ class ProfileView extends StatelessWidget {
                   ),
                 ),
                 buildCardListTile(
-                  PhosphorIcons.light.question,
+                  'assets/svg/help_icon.svg',
                   'Legal and Policies',
                   () {
                     GoRouter.of(context).push(
@@ -347,49 +292,8 @@ class ProfileView extends StatelessWidget {
     );
   }
 
-  Widget buildContainer(
-    String title,
-    PhosphorIconData icon,
-    VoidCallback onTap,
-    bool isGrey,
-  ) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: AppFontSize.md,
-          vertical: AppFontSize.md,
-        ),
-        decoration: BoxDecoration(
-          color: Colors.grey.shade300.withOpacity(.7),
-          borderRadius: BorderRadius.circular(AppFontSize.xs),
-        ),
-        width: double.infinity,
-        child: Row(
-          children: [
-            PhosphorIcon(
-              icon,
-              color: isGrey ? AppColors.blackColor : AppColors.redColor,
-            ),
-            const SizedBox(
-              width: AppFontSize.md,
-            ),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: AppFontSize.md,
-                fontWeight: AppFontWeight.semiBold,
-                color: isGrey ? AppColors.blackColor : AppColors.redColor,
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
   Widget buildCardListTile(
-    IconData icon,
+    String leadingIcon,
     String title,
     VoidCallback onTap,
   ) {
@@ -406,7 +310,14 @@ class ProfileView extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Icon(icon),
+              // svg
+              SizedBox(
+                child: SvgPicture.asset(
+                  leadingIcon,
+                  width: 24,
+                  height: 24,
+                ),
+              ),
               const SizedBox(
                 width: AppFontSize.md,
               ),

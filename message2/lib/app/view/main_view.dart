@@ -52,7 +52,7 @@ class _BodyMainViewState extends State<_BodyMainView>
       body: TabBarView(
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
-        children: [
+        children: const [
           HomePage(),
           VideoPage(),
           Scaffold(

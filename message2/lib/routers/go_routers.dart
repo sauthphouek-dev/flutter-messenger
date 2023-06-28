@@ -1,9 +1,7 @@
-// GoRouter configuration
-// GoRouter is a declarative router for Flutter.
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:message2/app/view/main_view.dart';
 import 'package:message2/chat/chat.dart';
+import 'package:message2/chat/widgets/view_chat_detail.dart';
 import 'package:message2/forgot_password/create_password/view/create_new_password.dart';
 import 'package:message2/forgot_password/verify_email/verify_email.dart';
 import 'package:message2/forgot_password/verify_otp/view/verify_otp_page.dart';
@@ -11,6 +9,7 @@ import 'package:message2/home/view/home_page.dart';
 import 'package:message2/login/login.dart';
 import 'package:message2/login/widget/sign_in_with_email.dart';
 import 'package:message2/notification/view/notification_page.dart';
+import 'package:message2/profile/profile_editing/profile_editing.dart';
 import 'package:message2/profile/security/security.dart';
 import 'package:message2/profile/view/profile_page.dart';
 import 'package:message2/profile/view_profile/view/view.dart';
@@ -104,6 +103,18 @@ class MyRouter {
       GoRoute(
         path: SecurityPage.routePath,
         builder: (context, state) => const SecurityPage(),
+      ),
+      GoRoute(
+        path: ProfileEditingPage.routePath,
+        builder: (context, state) => const ProfileEditingPage(),
+      ),
+      GoRoute(
+        path: ViewChatDetail.routePath,
+        builder: (context, state) {
+          final staffInformation = state.extra;
+          return ViewChatDetail(
+              staffInformation: staffInformation as StaffInformation);
+        },
       ),
     ],
   );
